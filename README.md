@@ -1,25 +1,11 @@
-# Meals To Go
+# Sample Snack app
 
-### Setting up full build
+Open the `App.js` file to start writing some code. You can preview the changes directly on your phone or tablet by scanning the **QR code** or use the iOS or Android emulators. When you're done, click **Save** and share the link!
 
-1. Go to `functions` folder
-2. Make sure you have node 16 running or later (if later update the engine in package.json)
-3. Run `yarn`
-4. Login to firebase `firebase login`
-5. Set the correct project name in `firebase.json`
-6. Copy your firebase config and paste it in `App.js` so it connects to the right firebase app
-7. Create a `.runtimeconfig.json` with 
-```
-{
-    "stripe": {
-        "key": "<empty>"
-    },
-    "google": {
-        "key": "<empty>"
-    }
-}
-```
-8. Run `yarn serve` in the firebase folder
-9. Run the Expo app
-10. Make sure `env.js` is set to mock mode real keys you want to test with (default to true on master).
+When you're ready to see everything that Expo provides (or if you want to use your own editor) you can **Download** your project and use it with [expo cli](https://docs.expo.dev/get-started/installation/#expo-cli)).
 
+All projects created in Snack are publicly available, so you can easily share the link to this project via link, or embed it on a web page with the `<>` button.
+
+If you're having problems, you can tweet to us [@expo](https://twitter.com/expo) or ask in our [forums](https://forums.expo.dev/c/expo-dev-tools/61) or [Discord](https://chat.expo.dev/).
+
+Snack is Open Source. You can find the code on the [GitHub repo](https://github.com/expo/snack).

@@ -1,51 +1,35 @@
-import { StatusBar as ExpoStatusBar } from "expo-status-bar";
-import React from "react";
-import { ThemeProvider } from "styled-components/native";
-import { initializeApp } from "firebase/app";
+import { Text, SafeAreaView, StyleSheet } from 'react-native';
 
-import {
-  useFonts as useOswald,
-  Oswald_400Regular,
-} from "@expo-google-fonts/oswald";
-import { useFonts as useLato, Lato_400Regular } from "@expo-google-fonts/lato";
+// You can import supported modules from npm
+import { Card } from 'react-native-paper';
 
-import { theme } from "./src/infrastructure/theme";
-import { Navigation } from "./src/infrastructure/navigation";
-
-import { AuthenticationContextProvider } from "./src/services/authentication/authentication.context";
-
-const firebaseConfig = {
-  apiKey: "<fill in your own>",
-  authDomain: "<fill in your own>",
-  projectId: "<fill in your own>",
-  storageBucket: "<fill in your own>",
-  messagingSenderId: "<fill in your own>",
-  appId: "<fill in your own>",
-};
-
-initializeApp(firebaseConfig);
+// or any files within the Snack
+import AssetExample from './components/AssetExample';
 
 export default function App() {
-  const [oswaldLoaded] = useOswald({
-    Oswald_400Regular,
-  });
-
-  const [latoLoaded] = useLato({
-    Lato_400Regular,
-  });
-
-  if (!oswaldLoaded || !latoLoaded) {
-    return null;
-  }
-
   return (
-    <>
-      <ThemeProvider theme={theme}>
-        <AuthenticationContextProvider>
-          <Navigation />
-        </AuthenticationContextProvider>
-      </ThemeProvider>
-      <ExpoStatusBar style="auto" />
-    </>
+    <SafeAreaView style={styles.container}>
+      <Text style={styles.paragraph}>
+        Change code in the editor and watch it change on your phone! Save to get a shareable url.
+      </Text>
+      <Card>
+        <AssetExample />
+      </Card>
+    </SafeAreaView>
   );
 }
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    justifyContent: 'center',
+    backgroundColor: '#ecf0f1',
+    padding: 8,
+  },
+  paragraph: {
+    margin: 24,
+    fontSize: 18,
+    fontWeight: 'bold',
+    textAlign: 'center',
+  },
+});
