@@ -1,6 +1,6 @@
 import { Text, SafeAreaView, StyleSheet } from 'react-native';
 import { Card } from 'react-native-paper';
-import AssetExample from './src/components/AssetExample';
+// import AssetExample from './src/components/AssetExample';
 
 export default function App() {
   return (
@@ -9,7 +9,7 @@ export default function App() {
         Change code in the editor and watch it change on your phone! Save to get a shareable url.
       </Text>
       <Card>
-        <AssetExample />
+        {/* <AssetExample /> */}
       </Card>
     </SafeAreaView>
   );
