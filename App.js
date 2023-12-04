@@ -1,6 +1,6 @@
 import { Text, SafeAreaView, StyleSheet } from 'react-native';
 import { Card } from 'react-native-paper';
-import AssetExample from './components/AssetExample';
+import AssetExample from './src/components/AssetExample';
 
 export default function App() {
   return (
