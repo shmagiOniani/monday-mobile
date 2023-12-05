@@ -40,7 +40,7 @@ export const SettingsScreen = ({ navigation }) => {
             backgroundColor={colors.brand.primary}
           />
           <Spacer position="top" size="large">
-            <Text variant="label">{user.email}</Text>
+            <Text variant="label">{user?.email}</Text>
           </Spacer>
         </AvatarContainer>
 

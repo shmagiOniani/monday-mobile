@@ -6,7 +6,20 @@ export const LocationContext = React.createContext();
 
 export const LocationContextProvider = ({ children }) => {
   const [keyword, setKeyword] = useState("San Francisco");
-  const [location, setLocation] = useState(null);
+  const [location, setLocation] = useState({
+    lat:'44',
+    lng: "33",
+    viewport: {
+      northeast:{
+        lat:'44',
+        lng: "33",
+      },
+      southwest:{
+        lat:'44',
+        lng: "33",
+      }
+    }
+  });
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState(null);
 
