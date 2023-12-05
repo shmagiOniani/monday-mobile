@@ -1,31 +1,39 @@
-import { Text, SafeAreaView, StyleSheet } from 'react-native';
-import { Card } from 'react-native-paper';
-// import AssetExample from './src/components/AssetExample';
+import { StatusBar as ExpoStatusBar } from "expo-status-bar";
+import React from "react";
+import { ThemeProvider } from "styled-components/native";
+
+import {
+  useFonts as useOswald,
+  Oswald_400Regular,
+} from "@expo-google-fonts/oswald";
+import { useFonts as useLato, Lato_400Regular } from "@expo-google-fonts/lato";
+
+import { theme } from "./src/infrastructure/theme";
+import { Navigation } from "./src/infrastructure/navigation";
+
+import { AuthenticationContextProvider } from "./src/services/authentication/authentication.context";
 
 export default function App() {
+  const [oswaldLoaded] = useOswald({
+    Oswald_400Regular,
+  });
+
+  const [latoLoaded] = useLato({
+    Lato_400Regular,
+  });
+
+  if (!oswaldLoaded || !latoLoaded) {
+    return null;
+  }
+
   return (
-    <SafeAreaView style={styles.container}>
-      <Text style={styles.paragraph}>
-        Change code in the editor and watch it change on your phone! Save to get a shareable url.
-      </Text>
-      <Card>
-        {/* <AssetExample /> */}
-      </Card>
-    </SafeAreaView>
+    <>
+      <ThemeProvider theme={theme}>
+        <AuthenticationContextProvider>
+          <Navigation />
+        </AuthenticationContextProvider>
+      </ThemeProvider>
+      <ExpoStatusBar style="auto" />
+    </>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    justifyContent: 'center',
-    backgroundColor: '#ecf0f1',
-    padding: 8,
-  },
-  paragraph: {
-    margin: 24,
-    fontSize: 18,
-    fontWeight: 'bold',
-    textAlign: 'center',
-  },
-});
