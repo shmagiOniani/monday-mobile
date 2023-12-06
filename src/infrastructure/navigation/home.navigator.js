@@ -5,27 +5,31 @@ import {
   TransitionPresets,
 } from "@react-navigation/stack";
 
-import { RestaurantsScreen } from "../../features/restaurants/screens/restaurants.screen";
-import { RestaurantDetailScreen } from "../../features/restaurants/screens/restaurant-detail.screen";
+import { HomeScreen } from "../../features/home/screens/home.screen";
+import { RestaurantDetailScreen } from "../../features/home/screens/restaurant-detail.screen";
 
-const RestaurantStack = createStackNavigator();
+const HomeStack = createStackNavigator();
 
 export const HomeNavigator = () => {
   return (
-    <RestaurantStack.Navigator
+    <HomeStack.Navigator
       headerMode="none"
       screenOptions={{
         ...TransitionPresets.ModalPresentationIOS,
+        headerShown: false,
       }}
     >
-      <RestaurantStack.Screen
-        name="Restaurants"
-        component={RestaurantsScreen}
+      <HomeStack.Screen
+        name="Home"
+        component={HomeScreen}
+        options={{ headerShown: false }}
       />
-      <RestaurantStack.Screen
+      <HomeStack.Screen
         name="RestaurantDetail"
         component={RestaurantDetailScreen}
+        options={{ headerShown: false }}
+
       />
-    </RestaurantStack.Navigator>
+    </HomeStack.Navigator>
   );
 };

@@ -18,7 +18,7 @@ import {
   ClearButton,
   PaymentProcessing,
 } from "../components/checkout.styles";
-import { RestaurantInfoCard } from "../../restaurants/components/restaurant-info-card.component";
+import { RestaurantInfoCard } from "../../home/components/restaurant-info-card.component";
 import { payRequest } from "../../../services/checkout/checkout.service";
 
 export const CheckoutScreen = ({ navigation }) => {

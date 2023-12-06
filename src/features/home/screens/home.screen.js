@@ -17,6 +17,7 @@ import { Search } from "../components/search.component";
 import { RestaurantInfoCard } from "../components/restaurant-info-card.component";
 import { colors } from "../../../infrastructure/theme/colors";
 import { RestaurantList } from "../components/restaurant-list.styles";
+import { Status } from "../../../components/status/status.component";
 
 const Loading = styled(ActivityIndicator)`
   margin-left: -25px;
@@ -27,7 +28,7 @@ const LoadingContainer = styled.View`
   left: 50%;
 `;
 
-export const RestaurantsScreen = ({ navigation }) => {
+export const HomeScreen = ({ navigation }) => {
   const { error: locationError } = useContext(LocationContext);
   const { isLoading, restaurants, error } = useContext(RestaurantsContext);
   const { favourites } = useContext(FavouritesContext);
@@ -40,7 +41,8 @@ export const RestaurantsScreen = ({ navigation }) => {
           <Loading size={50} animating={true} color={colors.brand.primary} />
         </LoadingContainer>
       )}
-      <Search
+      <Status/>
+      {/* <Search
         isFavouritesToggled={isToggled}
         onFavouritesToggle={() => setIsToggled(!isToggled)}
       />
@@ -77,7 +79,7 @@ export const RestaurantsScreen = ({ navigation }) => {
           }}
           keyExtractor={(item) => item.name}
         />
-      )}
+      )} */}
     </SafeArea>
   );
 };
