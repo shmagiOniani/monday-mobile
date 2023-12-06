@@ -10,7 +10,7 @@ import { RestaurantDetailScreen } from "../../features/restaurants/screens/resta
 
 const RestaurantStack = createStackNavigator();
 
-export const RestaurantsNavigator = () => {
+export const HomeNavigator = () => {
   return (
     <RestaurantStack.Navigator
       headerMode="none"
