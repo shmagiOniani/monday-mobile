@@ -6,7 +6,7 @@ import {
 } from "@react-navigation/stack";
 
 import { HomeScreen } from "../../features/home/screens/home.screen";
-import { RestaurantDetailScreen } from "../../features/home/screens/restaurant-detail.screen";
+import { ProductDetailScreen } from "../../features/home/screens/product-detail.screen";
 
 const HomeStack = createStackNavigator();
 
@@ -25,8 +25,8 @@ export const HomeNavigator = () => {
         options={{ headerShown: false }}
       />
       <HomeStack.Screen
-        name="RestaurantDetail"
-        component={RestaurantDetailScreen}
+        name="ProductDetail"
+        component={ProductDetailScreen}
         options={{ headerShown: false }}
 
       />

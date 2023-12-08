@@ -9,7 +9,7 @@ import { Text } from "../../../components/typography/text.component";
 import { Spacer } from "../../../components/spacer/spacer.component";
 
 import { RestaurantList } from "../../home/components/restaurant-list.styles";
-import { RestaurantInfoCard } from "../../home/components/restaurant-info-card.component";
+import { RestaurantInfoCard } from "../../home/components/product-card.component";
 
 const NoFavouritesArea = styled(SafeArea)`
   align-items: center;
@@ -26,7 +26,7 @@ export const FavouritesScreen = ({ navigation }) => {
           return (
             <TouchableOpacity
               onPress={() =>
-                navigation.navigate("RestaurantDetail", {
+                navigation.navigate("ProductDetail", {
                   restaurant: item,
                 })
               }

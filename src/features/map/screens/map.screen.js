@@ -51,7 +51,7 @@ export const MapScreen = ({ navigation }) => {
             >
               <Callout
                 onPress={() =>
-                  navigation.navigate("RestaurantDetail", {
+                  navigation.navigate("ProductDetail", {
                     restaurant,
                   })
                 }

@@ -3,13 +3,14 @@ import { ScrollView } from "react-native";
 import { List, Divider } from "react-native-paper";
 
 import { Spacer } from "../../../components/spacer/spacer.component";
-import { RestaurantInfoCard } from "../components/restaurant-info-card.component";
+import { RestaurantInfoCard } from "../components/product-card.component";
 
 import { SafeArea } from "../../../components/utility/safe-area.component";
 import { OrderButton } from "../components/restaurant-list.styles";
 import { CartContext } from "../../../services/cart/cart.context";
+import { Text } from "react-native";
 
-export const RestaurantDetailScreen = ({ navigation, route }) => {
+export const ProductDetailScreen = ({ navigation, route }) => {
   const [breakfastExpanded, setBreakfastExpanded] = useState(false);
   const [lunchExpanded, setLunchExpanded] = useState(false);
   const [dinnerExpanded, setDinnerExpanded] = useState(false);
@@ -20,8 +21,9 @@ export const RestaurantDetailScreen = ({ navigation, route }) => {
 
   return (
     <SafeArea>
-      <RestaurantInfoCard restaurant={restaurant} />
-      <ScrollView>
+      <Text>ProductDetailScreen</Text>
+      {/* <RestaurantInfoCard restaurant={restaurant} /> */}
+      {/* <ScrollView>
         <List.Accordion
           title="Breakfast"
           left={(props) => <List.Icon {...props} icon="bread-slice" />}
@@ -77,7 +79,7 @@ export const RestaurantDetailScreen = ({ navigation, route }) => {
           <Divider />
           <List.Item title="Fanta" />
         </List.Accordion>
-      </ScrollView>
+      </ScrollView>*/}
       <Spacer position="bottom" size="large">
         <OrderButton
           icon="cash-usd"
@@ -89,7 +91,7 @@ export const RestaurantDetailScreen = ({ navigation, route }) => {
         >
           Order Special Only 12.99!
         </OrderButton>
-      </Spacer>
+      </Spacer> 
     </SafeArea>
   );
 };

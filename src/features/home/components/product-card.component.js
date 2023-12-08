@@ -19,25 +19,26 @@ import {
   Address,
 } from "./restaurant-info-card.styles";
 
-export const RestaurantInfoCard = ({ restaurant = {} }) => {
-  const {
-    name = "Some Restaurant",
-    icon = "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/lodging-71.png",
-    photos = [
-      "https://www.foodiesfeed.com/wp-content/uploads/2019/06/top-view-for-box-of-2-burgers-home-made-600x899.jpg",
-    ],
-    address = "100 some random street",
-    isOpenNow = true,
-    rating = 4,
-    isClosedTemporarily = true,
-    placeId,
-  } = restaurant;
+export const ProductCard = ({ restaurant = {} }) => {
+  // const {
+  //   name = "Some Restaurant",
+  //   icon = "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/lodging-71.png",
+  //   photos = [
+  //     "https://www.foodiesfeed.com/wp-content/uploads/2019/06/top-view-for-box-of-2-burgers-home-made-600x899.jpg",
+  //   ],
+  //   address = "100 some random street",
+  //   isOpenNow = true,
+  //   rating = 4,
+  //   isClosedTemporarily = true,
+  //   placeId,
+  // } = restaurant;
 
-  const ratingArray = Array.from(new Array(Math.floor(rating)));
+  // const ratingArray = Array.from(new Array(Math.floor(rating)));
 
   return (
     <RestaurantCard elevation={2}>
-      <View>
+      <Text>details</Text>
+      {/* <View>
         <Favourite restaurant={restaurant} />
         <RestaurantCardCover key={name} source={{ uri: photos[0] }} />
       </View>
@@ -67,7 +68,7 @@ export const RestaurantInfoCard = ({ restaurant = {} }) => {
           </SectionEnd>
         </Section>
         <Address>{address}</Address>
-      </Info>
+      </Info> */}
     </RestaurantCard>
   );
 };
