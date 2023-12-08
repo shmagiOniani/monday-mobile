@@ -13,9 +13,8 @@ const HomeStack = createStackNavigator();
 export const HomeNavigator = () => {
   return (
     <HomeStack.Navigator
-      headerMode="none"
+      initialRouteName="Home"
       screenOptions={{
-        ...TransitionPresets.ModalPresentationIOS,
         headerShown: false,
       }}
     >
@@ -28,7 +27,6 @@ export const HomeNavigator = () => {
         name="ProductDetail"
         component={ProductDetailScreen}
         options={{ headerShown: false }}
-
       />
     </HomeStack.Navigator>
   );

@@ -43,10 +43,10 @@ export const AppNavigator = () => (
               showLabel: false,
             }}
           >
-            <Tab.Screen name="Home"  component={HomeNavigator} />
-            <Tab.Screen name="Checkout" component={CheckoutNavigator} />
-            <Tab.Screen name="Map" component={MapScreen} />
-            <Tab.Screen name="Settings" component={SettingsNavigator} />
+            <Tab.Screen name="Home" options={{headerShown:false}} component={HomeNavigator} />
+            <Tab.Screen name="Checkout" options={{headerShown:false}} component={CheckoutNavigator} />
+            <Tab.Screen name="Map" options={{headerShown:false}} component={MapScreen} />
+            <Tab.Screen name="Settings" options={{headerShown:false}} component={SettingsNavigator} />
           </Tab.Navigator>
         </CartContextProvider>
       </RestaurantsContextProvider>

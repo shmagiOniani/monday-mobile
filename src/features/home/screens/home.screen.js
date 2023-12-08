@@ -1,4 +1,4 @@
-import React from "react";
+import React,{useState} from "react";
 import { TouchableOpacity } from "react-native";
 import styled from "styled-components/native";
 import { ActivityIndicator, Colors } from "react-native-paper";
@@ -15,6 +15,7 @@ import { Spacer } from "../../../components/spacer/spacer.component";
 
 import { ProductCard } from "../components/product-card.component";
 import { colors } from "../../../infrastructure/theme/colors";
+import { Search } from "../../map/components/search.component";
 // import { Search } from "../components/search.component";
 // import { RestaurantList } from "../components/restaurant-list.styles";
 // import { Status } from "../../../components/status/status.component";
@@ -32,10 +33,10 @@ export const HomeScreen = ({ navigation }) => {
   // const { error: locationError } = useContext(LocationContext);
   // const { isLoading, restaurants, error } = useContext(RestaurantsContext);
   // const { favourites } = useContext(FavouritesContext);
-  // const [isToggled, setIsToggled] = useState(false);
+  const [isToggled, setIsToggled] = useState(false);
   // const hasError = !!error || !!locationError;
 
-    const restaurant = {
+    const product = {
     name : "Some Restaurant",
     icon : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/lodging-71.png",
     photos : [
@@ -54,11 +55,15 @@ export const HomeScreen = ({ navigation }) => {
           <Loading size={50} animating={true} color={colors.brand.primary} />
         </LoadingContainer>
       )}
+        <Search
+        isFavouritesToggled={isToggled}
+        onFavouritesToggle={() => setIsToggled(!isToggled)}
+      />
       {/* <Status/> */}
       <TouchableOpacity
         onPress={() =>
           navigation.navigate("ProductDetail", {
-            restaurant: restaurant,
+            product: product,
           })
         }
       >
@@ -69,11 +74,8 @@ export const HomeScreen = ({ navigation }) => {
           </FadeInView>
         </Spacer>
       </TouchableOpacity>
-      {/* <Search
-        isFavouritesToggled={isToggled}
-        onFavouritesToggle={() => setIsToggled(!isToggled)}
-      />
-      {isToggled && (
+    
+       {/*{isToggled && (
         <FavouritesBar
           favourites={favourites}
           onNavigate={navigation.navigate}

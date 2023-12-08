@@ -1,9 +1,9 @@
 import React, { useState, useContext } from "react";
 import { ScrollView } from "react-native";
-import { List, Divider } from "react-native-paper";
+import { List, Divider, Button } from "react-native-paper";
 
 import { Spacer } from "../../../components/spacer/spacer.component";
-import { RestaurantInfoCard } from "../components/product-card.component";
+import { ProductCard } from "../components/product-card.component";
 
 import { SafeArea } from "../../../components/utility/safe-area.component";
 import { OrderButton } from "../components/restaurant-list.styles";
@@ -16,13 +16,17 @@ export const ProductDetailScreen = ({ navigation, route }) => {
   const [dinnerExpanded, setDinnerExpanded] = useState(false);
   const [drinksExpanded, setDrinksExpanded] = useState(false);
 
-  const { restaurant } = route.params;
+  const { product } = route.params;
   const { addToCart } = useContext(CartContext);
 
   return (
     <SafeArea>
-      <Text>ProductDetailScreen</Text>
-      {/* <RestaurantInfoCard restaurant={restaurant} /> */}
+
+      <Text >ProductDetailScreen</Text>
+
+      <Button onPress={()=> navigation.goBack()} icon={'chevron-left'}/>
+        
+      <ProductCard restaurant={product} />
       {/* <ScrollView>
         <List.Accordion
           title="Breakfast"
