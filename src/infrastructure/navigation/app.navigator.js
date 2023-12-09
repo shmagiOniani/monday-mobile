@@ -15,9 +15,9 @@ import { colors } from "../../infrastructure/theme/colors";
 const Tab = createBottomTabNavigator();
 
 const TAB_ICON = {
-  Home: "home",
+  Home: "md-home-outline",
+  Checkout: "heart-outline",
   Map: "md-map",
-  Checkout: "md-cart",
   Settings: "md-settings",
 };
 
@@ -40,7 +40,7 @@ export const AppNavigator = () => (
             tabBarOptions={{
               activeTintColor: colors.brand.primary,
               inactiveTintColor: colors.brand.muted,
-              showLabel: false,
+              // showLabel: false,
             }}
           >
             <Tab.Screen name="Home" options={{headerShown:false}} component={HomeNavigator} />

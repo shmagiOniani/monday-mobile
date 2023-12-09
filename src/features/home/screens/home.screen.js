@@ -55,10 +55,10 @@ export const HomeScreen = ({ navigation }) => {
           <Loading size={50} animating={true} color={colors.brand.primary} />
         </LoadingContainer>
       )}
-        <Search
+        {/* <Search
         isFavouritesToggled={isToggled}
         onFavouritesToggle={() => setIsToggled(!isToggled)}
-      />
+      /> */}
       {/* <Status/> */}
       <TouchableOpacity
         onPress={() =>

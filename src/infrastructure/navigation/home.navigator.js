@@ -21,12 +21,12 @@ export const HomeNavigator = () => {
       <HomeStack.Screen
         name="Home"
         component={HomeScreen}
-        options={{ headerShown: false }}
+        // options={{ headerShown: false }}
       />
       <HomeStack.Screen
         name="ProductDetail"
         component={ProductDetailScreen}
-        options={{ headerShown: false }}
+        // options={{ headerShown: false }}
       />
     </HomeStack.Navigator>
   );
