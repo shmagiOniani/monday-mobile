@@ -41,6 +41,13 @@ export const AppNavigator = () => (
               activeTintColor: colors.brand.primary,
               inactiveTintColor: colors.brand.muted,
               // showLabel: false,
+              style: {
+                backgroundColor: "transparent",
+                borderTopWidth: 0,
+                position: "absolute",
+                elevation: 0,
+              },
+
             }}
           >
             <Tab.Screen name="Home" options={{headerShown:false}} component={HomeNavigator} />
