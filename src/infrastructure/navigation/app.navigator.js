@@ -27,6 +27,14 @@ const createScreenOptions = ({ route }) => {
     tabBarIcon: ({ size, color }) => (
       <Ionicons name={iconName} size={size} color={color} />
     ),
+    tabBarStyle:{
+      position: 'absolute',
+      height: 60,
+      bottom: 16,
+      right: 16,
+      left: 16,
+      borderRadius: 10
+    }
   };
 };
 
@@ -41,14 +49,9 @@ export const AppNavigator = () => (
               activeTintColor: colors.brand.primary,
               inactiveTintColor: colors.brand.muted,
               // showLabel: false,
-              style: {
-                backgroundColor: "transparent",
-                borderTopWidth: 0,
-                position: "absolute",
-                elevation: 0,
-              },
-
+              
             }}
+           
           >
             <Tab.Screen name="Home" options={{headerShown:false}} component={HomeNavigator} />
             <Tab.Screen name="Checkout" options={{headerShown:false}} component={CheckoutNavigator} />
