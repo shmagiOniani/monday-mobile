@@ -1,7 +1,7 @@
 import React,{useState} from "react";
 import { TouchableOpacity } from "react-native";
 import styled from "styled-components/native";
-import { ActivityIndicator, Colors } from "react-native-paper";
+import { ActivityIndicator, Colors, Text } from "react-native-paper";
 
 import { FadeInView } from "../../../components/animations/fade.animation";
 import { SafeArea } from "../../../components/utility/safe-area.component";
@@ -16,6 +16,8 @@ import { Spacer } from "../../../components/spacer/spacer.component";
 import { ProductCard } from "../components/product-card.component";
 import { colors } from "../../../infrastructure/theme/colors";
 import { Search } from "../../map/components/search.component";
+import { ProductCategoryCard } from "../components/product-category-card.component";
+import { CategoryWrapper } from "../components/restaurant-list.styles";
 // import { Search } from "../components/search.component";
 // import { RestaurantList } from "../components/restaurant-list.styles";
 // import { Status } from "../../../components/status/status.component";
@@ -60,6 +62,15 @@ export const HomeScreen = ({ navigation }) => {
         onFavouritesToggle={() => setIsToggled(!isToggled)}
       /> */}
       {/* <Status/> */}
+
+
+
+      <CategoryWrapper>
+              <ProductCategoryCard></ProductCategoryCard>
+
+              <ProductCategoryCard></ProductCategoryCard>
+   
+      </CategoryWrapper>
       <TouchableOpacity
         onPress={() =>
           navigation.navigate("ProductDetail", {

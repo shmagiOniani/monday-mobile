@@ -42,3 +42,16 @@ export const SectionEnd = styled.View`
   flex-direction: row;
   justify-content: flex-end;
 `;
+
+
+export const CategoryCard = styled.View`
+  background-color: ${(props) => props.theme.colors.bg.primary};
+  width: 50%;
+  height: 100px;
+`;
+
+export const CategoryCardCover = styled.Image`
+  border-radius: 10px;
+  width: auto;
+  height: 100%;
+`;

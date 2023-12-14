@@ -16,3 +16,9 @@ export const OrderButton = styled(Button).attrs({
   width: 80%;
   align-self: center;
 `;
+
+
+export const CategoryWrapper = styled.View`
+  flex-direction: row;
+ 
+`;
