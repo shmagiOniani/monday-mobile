@@ -1,5 +1,5 @@
-import React,{useState} from "react";
-import { TouchableOpacity } from "react-native";
+import React, { useState } from "react";
+import { TouchableOpacity, View } from "react-native";
 import styled from "styled-components/native";
 import { ActivityIndicator, Colors, Text } from "react-native-paper";
 
@@ -38,18 +38,18 @@ export const HomeScreen = ({ navigation }) => {
   const [isToggled, setIsToggled] = useState(false);
   // const hasError = !!error || !!locationError;
 
-    const product = {
-    name : "Some Restaurant",
-    icon : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/lodging-71.png",
-    photos : [
+  const product = {
+    name: "Some Restaurant",
+    icon: "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/lodging-71.png",
+    photos: [
       "https://www.foodiesfeed.com/wp-content/uploads/2019/06/top-view-for-box-of-2-burgers-home-made-600x899.jpg",
     ],
-    address : "100 some random street",
-    isOpenNow : true,
-    rating : 4,
-    isClosedTemporarily : true,
-    placeId:'SDsdd',
-  } 
+    address: "100 some random street",
+    isOpenNow: true,
+    rating: 4,
+    isClosedTemporarily: true,
+    placeId: "SDsdd",
+  };
   return (
     <SafeArea>
       {false && (
@@ -57,19 +57,28 @@ export const HomeScreen = ({ navigation }) => {
           <Loading size={50} animating={true} color={colors.brand.primary} />
         </LoadingContainer>
       )}
-        {/* <Search
+      {/* <Search
         isFavouritesToggled={isToggled}
         onFavouritesToggle={() => setIsToggled(!isToggled)}
       /> */}
       {/* <Status/> */}
 
-
-
       <CategoryWrapper>
-              <ProductCategoryCard></ProductCategoryCard>
-
-              <ProductCategoryCard></ProductCategoryCard>
-   
+        <View style={{ width: "46%", marginLeft: "1%" }}>
+          <TouchableOpacity>
+            <ProductCategoryCard></ProductCategoryCard>
+          </TouchableOpacity>
+        </View>
+        <View style={{ width: "46%", marginRight: "1%" }}>
+          <TouchableOpacity>
+            <ProductCategoryCard></ProductCategoryCard>
+          </TouchableOpacity>
+        </View>
+        <View style={{ width: "95%" }}>
+          <TouchableOpacity>
+            <ProductCategoryCard></ProductCategoryCard>
+          </TouchableOpacity>
+        </View>
       </CategoryWrapper>
       <TouchableOpacity
         onPress={() =>
@@ -80,13 +89,13 @@ export const HomeScreen = ({ navigation }) => {
       >
         <Spacer position="bottom" size="large">
           <FadeInView>
-            <ProductCard/>
+            <ProductCard />
             {/* <RestaurantInfoCard restaurant={item} /> */}
           </FadeInView>
         </Spacer>
       </TouchableOpacity>
-    
-       {/*{isToggled && (
+
+      {/*{isToggled && (
         <FavouritesBar
           favourites={favourites}
           onNavigate={navigation.navigate}

@@ -30,7 +30,7 @@ export const ProductCategoryCard = ({ restaurant = {} }) => {
 
   return (
     <CategoryCard elevation={2}>
-      {/* <Text>details</Text> */}
+        <Text>details</Text>
     
         
         <CategoryCardCover key={name} source={{ uri: photos[0] }} />

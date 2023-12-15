@@ -20,5 +20,7 @@ export const OrderButton = styled(Button).attrs({
 
 export const CategoryWrapper = styled.View`
   flex-direction: row;
- 
+  margin: 10px 0;
+  justify-content: space-around;
+  flex-wrap: wrap;
 `;

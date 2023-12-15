@@ -45,13 +45,20 @@ export const SectionEnd = styled.View`
 
 
 export const CategoryCard = styled.View`
-  background-color: ${(props) => props.theme.colors.bg.primary};
-  width: 50%;
+  padding: ${(props) => props.theme.space[3]};
+  background-color: #edebfd;
+  width: 100%;
   height: 100px;
+  margin-bottom: ${(props) => props.theme.space[2]};
+  border-radius: 10px;
+  overflow: hidden;
 `;
 
 export const CategoryCardCover = styled.Image`
   border-radius: 10px;
-  width: auto;
-  height: 100%;
+  // width: auto;
+  // height: 100%;
+  width: 80px;
+  height: 50px;
+  margin-left: auto;
 `;
