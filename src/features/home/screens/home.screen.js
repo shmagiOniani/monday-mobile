@@ -18,6 +18,7 @@ import { colors } from "../../../infrastructure/theme/colors";
 import { Search } from "../../map/components/search.component";
 import { ProductCategoryCard } from "../components/product-category-card.component";
 import { CategoryWrapper } from "../components/restaurant-list.styles";
+import { CategoriesBar } from "../../../components/categories/categories-bar.component";
 // import { Search } from "../components/search.component";
 // import { RestaurantList } from "../components/restaurant-list.styles";
 // import { Status } from "../../../components/status/status.component";
@@ -35,6 +36,33 @@ export const HomeScreen = ({ navigation }) => {
   // const { error: locationError } = useContext(LocationContext);
   // const { isLoading, restaurants, error } = useContext(RestaurantsContext);
   // const { favourites } = useContext(FavouritesContext);
+
+  const categoriesList = [
+    {
+      name: "Gloria dei",
+      image: "gloria-dei.png",
+    },
+    {
+      name: "Rose",
+      image: "rose.png",
+    },
+    {
+      name: "Lily",
+      image: "lily.png",
+    },
+    {
+      name: "Tulip",
+      image: "tulip.png",
+    },
+    {
+      name: "Orchid",
+      image: "orchid.png",
+    },
+    {
+      name: "Sunflower",
+      image: "sunflower.png",
+    },
+  ];
   const [isToggled, setIsToggled] = useState(false);
   // const hasError = !!error || !!locationError;
 
@@ -80,6 +108,7 @@ export const HomeScreen = ({ navigation }) => {
           </TouchableOpacity>
         </View>
       </CategoryWrapper>
+      <CategoriesBar categories={categoriesList} />
       <TouchableOpacity
         onPress={() =>
           navigation.navigate("ProductDetail", {
