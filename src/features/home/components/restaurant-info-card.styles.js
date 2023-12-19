@@ -1,19 +1,19 @@
 import styled from "styled-components/native";
 import { Card } from "react-native-paper";
 
-export const Icon = styled.Image`
-  width: 15px;
-  height: 15px;
-`;
+// export const Icon = styled.Image`
+//   width: 15px;
+//   height: 15px;
+// `;
 
 export const RestaurantCard = styled(Card)`
   background-color: ${(props) => props.theme.colors.bg.primary};
-  width: 100%;
+  width: 90%;
   align-self: center;
 `;
 
 export const RestaurantCardCover = styled(Card.Cover)`
-  padding: ${(props) => props.theme.space[3]};
+  // padding: ${(props) => props.theme.space[3]};
   background-color: ${(props) => props.theme.colors.bg.primary};
 `;
 

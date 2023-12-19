@@ -172,11 +172,9 @@ export const HomeScreen = ({ navigation }) => {
         </Spacer>
       )} */}
       <RestaurantList
-        contentContainerStyle={{
-          justifyContent: "space-between",
-          width: "100%",
-          alignItems: "center",
-        }}
+        // contentContainerStyle={{
+        //   paddingBottom: '1200px',
+        // }}
         ListHeaderComponent={
           <>
             <CategoryWrapper>
