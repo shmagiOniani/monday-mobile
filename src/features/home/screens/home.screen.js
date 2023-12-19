@@ -17,7 +17,10 @@ import { ProductCard } from "../components/product-card.component";
 import { colors } from "../../../infrastructure/theme/colors";
 import { Search } from "../../map/components/search.component";
 import { ProductCategoryCard } from "../components/product-category-card.component";
-import { CategoryWrapper } from "../components/restaurant-list.styles";
+import {
+  CategoryWrapper,
+  RestaurantList,
+} from "../components/restaurant-list.styles";
 import { CategoriesBar } from "../../../components/categories/categories-bar.component";
 // import { Search } from "../components/search.component";
 // import { RestaurantList } from "../components/restaurant-list.styles";
@@ -36,6 +39,57 @@ export const HomeScreen = ({ navigation }) => {
   // const { error: locationError } = useContext(LocationContext);
   // const { isLoading, restaurants, error } = useContext(RestaurantsContext);
   // const { favourites } = useContext(FavouritesContext);
+
+  const restaurants = [
+    {
+      name: "Some Restaurant",
+      icon: "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/lodging-71.png",
+      photos: [
+        "https://www.foodiesfeed.com/wp-content/uploads/2019/06/top-view-for-box-of-2-burgers-home-made-600x899.jpg",
+      ],
+      address: "100 some random street",
+      isOpenNow: true,
+      rating: 4,
+      isClosedTemporarily: true,
+      placeId: "SDsdsfghdd",
+    },
+    {
+      name: "Some Restaurant",
+      icon: "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/lodging-71.png",
+      photos: [
+        "https://www.foodiesfeed.com/wp-content/uploads/2019/06/top-view-for-box-of-2-burgers-home-made-600x899.jpg",
+      ],
+      address: "100 some random street",
+      isOpenNow: true,
+      rating: 4,
+      isClosedTemporarily: true,
+      placeId: "dfsgdhfdss",
+    },
+    {
+      name: "Some Restaurant",
+      icon: "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/lodging-71.png",
+      photos: [
+        "https://www.foodiesfeed.com/wp-content/uploads/2019/06/top-view-for-box-of-2-burgers-home-made-600x899.jpg",
+      ],
+      address: "100 some random street",
+      isOpenNow: true,
+      rating: 4,
+      isClosedTemporarily: true,
+      placeId: "dfghfd",
+    },
+    {
+      name: "Some Restaurant",
+      icon: "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/lodging-71.png",
+      photos: [
+        "https://www.foodiesfeed.com/wp-content/uploads/2019/06/top-view-for-box-of-2-burgers-home-made-600x899.jpg",
+      ],
+      address: "100 some random street",
+      isOpenNow: true,
+      rating: 4,
+      isClosedTemporarily: true,
+      placeId: "wertgfdfew",
+    },
+  ];
 
   const categoriesList = [
     {
@@ -91,25 +145,7 @@ export const HomeScreen = ({ navigation }) => {
       /> */}
       {/* <Status/> */}
 
-      <CategoryWrapper>
-        <View style={{ width: "46%", marginLeft: "1%" }}>
-          <TouchableOpacity>
-            <ProductCategoryCard></ProductCategoryCard>
-          </TouchableOpacity>
-        </View>
-        <View style={{ width: "46%", marginRight: "1%" }}>
-          <TouchableOpacity>
-            <ProductCategoryCard></ProductCategoryCard>
-          </TouchableOpacity>
-        </View>
-        <View style={{ width: "95%" }}>
-          <TouchableOpacity>
-            <ProductCategoryCard></ProductCategoryCard>
-          </TouchableOpacity>
-        </View>
-      </CategoryWrapper>
-      <CategoriesBar categories={categoriesList} />
-      <TouchableOpacity
+      {/* <TouchableOpacity
         onPress={() =>
           navigation.navigate("ProductDetail", {
             product: product,
@@ -119,12 +155,12 @@ export const HomeScreen = ({ navigation }) => {
         <Spacer position="bottom" size="large">
           <FadeInView>
             <ProductCard />
-            {/* <RestaurantInfoCard restaurant={item} /> */}
+            <RestaurantInfoCard restaurant={item} />
           </FadeInView>
         </Spacer>
-      </TouchableOpacity>
+      </TouchableOpacity> */}
 
-      {/*{isToggled && (
+      {/* {isToggled && (
         <FavouritesBar
           favourites={favourites}
           onNavigate={navigation.navigate}
@@ -134,30 +170,59 @@ export const HomeScreen = ({ navigation }) => {
         <Spacer position="left" size="large">
           <Text variant="error">Something went wrong retrieving the data</Text>
         </Spacer>
-      )}
-      {!hasError && (
-        <RestaurantList
-          data={restaurants}
-          renderItem={({ item }) => {
-            return (
-              <TouchableOpacity
-                onPress={() =>
-                  navigation.navigate("ProductDetail", {
-                    restaurant: item,
-                  })
-                }
-              >
-                <Spacer position="bottom" size="large">
-                  <FadeInView>
-                    <RestaurantInfoCard restaurant={item} />
-                  </FadeInView>
-                </Spacer>
-              </TouchableOpacity>
-            );
-          }}
-          keyExtractor={(item) => item.name}
-        />
       )} */}
+      <RestaurantList
+        contentContainerStyle={{
+          justifyContent: "space-between",
+          width: "100%",
+          alignItems: "center",
+        }}
+        ListHeaderComponent={
+          <>
+            <CategoryWrapper>
+              <View style={{ width: "46%", marginLeft: "1%" }}>
+                <TouchableOpacity>
+                  <ProductCategoryCard></ProductCategoryCard>
+                </TouchableOpacity>
+              </View>
+              <View style={{ width: "46%", marginRight: "1%" }}>
+                <TouchableOpacity>
+                  <ProductCategoryCard></ProductCategoryCard>
+                </TouchableOpacity>
+              </View>
+              <View style={{ width: "95%" }}>
+                <TouchableOpacity>
+                  <ProductCategoryCard></ProductCategoryCard>
+                </TouchableOpacity>
+              </View>
+            </CategoryWrapper>
+            <CategoriesBar categories={categoriesList} />
+          </>
+        }
+        data={restaurants}
+        numColumns={2}
+        key={(item) => item.placeId}
+        renderItem={({ item }) => {
+          return (
+            <TouchableOpacity
+              style={{ flex: 1}}
+              onPress={() =>
+                navigation.navigate("ProductDetail", {
+                  restaurant: item,
+                })
+              }
+            >
+              <Spacer position="bottom" size="large">
+                <FadeInView>
+                  <ProductCard />
+                  {/* <RestaurantInfoCard restaurant={item} /> */}
+                </FadeInView>
+              </Spacer>
+            </TouchableOpacity>
+          );
+        }}
+        keyExtractor={(item) => item.placeId}
+      />
     </SafeArea>
   );
 };

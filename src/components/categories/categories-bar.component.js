@@ -11,6 +11,7 @@ const CategoriesBarWrapper = styled(Card)`
   padding: 10px;
   z-index: 999;
   border-radius: 15px;
+  margin-bottom: 15px;
 `;
 export const CategoriesBar = ({ categories, onNavigate }) => {
   if (!categories.length) {
