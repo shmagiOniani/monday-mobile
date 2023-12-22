@@ -197,6 +197,7 @@ export const HomeScreen = ({ navigation }) => {
             <CategoriesBar categories={categoriesList} />
           </>
         }
+
         data={restaurants}
         numColumns={2}
         key={(item) => item.placeId}
@@ -213,7 +214,12 @@ export const HomeScreen = ({ navigation }) => {
               <Spacer position="bottom" size="large">
                 <FadeInView>
                   <ProductCard />
+
+{/* sdssd sdank mksmas */}
+
                   {/* <RestaurantInfoCard restaurant={item} /> */}
+
+
                 </FadeInView>
               </Spacer>
             </TouchableOpacity>
